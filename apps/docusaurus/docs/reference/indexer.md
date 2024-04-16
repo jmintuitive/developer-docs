@@ -51,34 +51,35 @@ _Has an aggregate view for summary data called `account_transactions_aggregate`_
 
 mapping between accounts to transactions that touch that account
 
-| Field                        | Type | Description |
-|------------------------------|------|-------------|
-| coin_activities              |      |             |
-| coin_activities_aggregate    |      |             |
-| delegated_staking_activities |      |             |
-| fungible_asset_activities    |      |             |
-| token_activities             |      |             |
-| token_activities_aggregate   |      |             |
-| token_activities_v2          |      |             |
-| token_activities_v2_aggregate|      |             |
-| transaction_version          |      |             |
+| Field                        | Type    | Description |
+|------------------------------|---------|-------------|
+| account_address              | String! |             |
+| coin_activities              | Table   |             |
+| coin_activities_aggregate    | Table   |             |
+| delegated_staking_activities | Table   |             |
+| fungible_asset_activities    | Table   |             |
+| token_activities             | Table   |             |
+| token_activities_aggregate   | Table   |             |
+| token_activities_v2          | Table   |             |
+| token_activities_v2_aggregate| Table   |             |
+| transaction_version          | bigint! |             |
 
 ### `ledger_infos`
 which chain, should be largely irrelevant
 
-| Field         | Type | Description |
-|---------------|------|-------------|
-| chain_id      |      |             |
+| Field         | Type   | Description |
+|---------------|--------|-------------|
+| chain_id      | String |             |
 
 ### `processor_status`
 gives you latest version processed per “processor”
 
-| Field                     | Type | Description |
-|---------------------------|------|-------------|
-| last_success_version      |      |             |
-| last_transaction_timestamp|      |             |
-| last_updated              |      |             |
-| processor                 |      |             |
+| Field                     | Type   | Description |
+|---------------------------|--------|-------------|
+| last_success_version      | bigint |             |
+| last_transaction_timestamp| bigint |             |
+| last_updated              | bigint |             |
+| processor                 | String |             |
 
 ## NFT
 
@@ -87,195 +88,195 @@ _Has an aggregate view for summary data called `token_activities_v2_aggregate`_
 
 NFT activities, include both v1 and v2
 
-| Field                     | Type | Description |
-|---------------------------|------|-------------|
-| aptos_names_owner         |      |             |
-| aptos_names_owner_aggregate|     |             |
-| aptos_names_to            |      |             |
-| aptos_names_to_aggregate  |      |             |
-| coin_amount               |      |             |
-| coin_type                 |      |             |
-| collection_data_id_hash   |      |             |
-| collection_name           |      |             |
-| creator_address           |      |             |
-| current_token_data        |      |             |
-| event_account_address     |      |             |
-| event_creation_number     |      |             |
-| event_index               |      |             |
-| event_sequence_number     |      |             |
-| from_address              |      |             |
-| name                      |      |             |
-| property_version          |      |             |
-| to_address                |      |             |
-| token_amount              |      |             |
-| token_data_id_hash        |      |             |
-| transaction_timestamp     |      |             |
-| transaction_version       |      |             |
-| transfer_type             |      |             |
+| Field                     | Type   | Description |
+|---------------------------|--------|-------------|
+| aptos_names_owner         | Table  |             |
+| aptos_names_owner_aggregate| Table |             |
+| aptos_names_to            | Table  |             |
+| aptos_names_to_aggregate  | Table  |             |
+| coin_amount               | bigint |             |
+| coin_type                 | String |             |
+| collection_data_id_hash   | String |             |
+| collection_name           | String |             |
+| creator_address           | String |             |
+| current_token_data        | Table  |             |
+| event_account_address     | String |             |
+| event_creation_number     | bigint |             |
+| event_index               | bigint |             |
+| event_sequence_number     | bigint |             |
+| from_address              | String |             |
+| name                      | String |             |
+| property_version          | bigint |             |
+| to_address                | String |             |
+| token_amount              | bigint |             |
+| token_data_id_hash        | String |             |
+| transaction_timestamp     | bigint |             |
+| transaction_version       | bigint |             |
+| transfer_type             | String |             |
 
 ### `nft_metadata_crawler_parsed_asset_uris`
 cdn of the images for nfts
 
-| Field                          | Type | Description |
-|--------------------------------|------|-------------|
-| animation_optimizer_retry_count|      |             |
-| asset_uri                      |      |             |
-| cdn_animation_uri              |      |             |
-| cdn_image_uri                  |      |             |
-| cdn_json_uri                   |      |             |
-| image_optimizer_retry_count    |      |             |
-| json_parser_retry_count        |      |             |
-| raw_animation_uri              |      |             |
-| raw_image_uri                  |      |             |
+| Field                          | Type   | Description |
+|--------------------------------|--------|-------------|
+| animation_optimizer_retry_count| Int    |             |
+| asset_uri                      | String |             |
+| cdn_animation_uri              | String |             |
+| cdn_image_uri                  | String |             |
+| cdn_json_uri                   | String |             |
+| image_optimizer_retry_count    | Int    |             |
+| json_parser_retry_count        | Int    |             |
+| raw_animation_uri              | String |             |
+| raw_image_uri                  | String |             |
 
 ### `current_token_ownerships_v2`
 _Has an aggregate view for summary data called `current_token_ownerships_v2_aggregate`_
 
 who owns which nft, includes token v1. Note, fungible tokens are exceptions. They are currently in all the token tables but we might want to remove them.
 
-| Field                        | Type | Description |
-|------------------------------|------|-------------|
-| amount                       |      |             |
-| aptos_name                   |      |             |
-| collection_data_id_hash      |      |             |
-| collection_name              |      |             |
-| creator_address              |      |             |
-| current_collection_data      |      |             |
-| current_token_data           |      |             |
-| last_transaction_timestamp   |      |             |
-| last_transaction_version     |      |             |
-| name                         |      |             |
-| owner_address                |      |             |
-| property_version             |      |             |
-| table_type                   |      |             |
-| token_data_id_hash           |      |             |
-| token_properties             |      |             |
+| Field                        | Type   | Description |
+|------------------------------|--------|-------------|
+| amount                       | bigint |             |
+| aptos_name                   | String |             |
+| collection_data_id_hash      | String |             |
+| collection_name              | String |             |
+| creator_address              | String |             |
+| current_collection_data      | Table  |             |
+| current_token_data           | Table  |             |
+| last_transaction_timestamp   | bigint |             |
+| last_transaction_version     | bigint |             |
+| name                         | String |             |
+| owner_address                | String |             |
+| property_version             | bigint |             |
+| table_type                   | String |             |
+| token_data_id_hash           | String |             |
+| token_properties             | Table  |             |
 
 ### `current_token_datas_v2`
 metadata of each nft, including uri, etc, includes token v1.
 
-| Field                           | Type | Description |
-|---------------------------------|------|-------------|
-| aptos_name                      |      |             |
-| cdn_asset_uris                  |      |             |
-| collection_id                   |      |             |
-| current_collection              |      |             |
-| current_token_ownerships        |      |             |
-| current_token_ownerships_aggregate|    |             |
-| decimals                        |      |             |
-| description                     |      |             |
-| is_fungible_v2                  |      |             |
-| largest_property_version_v1     |      |             |
-| last_transaction_timestamp      |      |             |
-| last_transaction_version        |      |             |
-| maximum                         |      |             |
-| supply                          |      |             |
-| token_data_id                   |      |             |
-| token_name                      |      |             |
-| token_properties                |      |             |
-| token_standard                  |      |             |
-| token_uri                       |      |             |
+| Field                           | Type   | Description |
+|---------------------------------|--------|-------------|
+| aptos_name                      | String |             |
+| cdn_asset_uris                  | Table  |             |
+| collection_id                   | bigint |             |
+| current_collection              | Table  |             |
+| current_token_ownerships        | Table  |             |
+| current_token_ownerships_aggregate | Table  |         |
+| decimals                        | bigint |             |
+| description                     | String |             |
+| is_fungible_v2                  | Boolean|             |
+| largest_property_version_v1     | bigint |             |
+| last_transaction_timestamp      | bigint |             |
+| last_transaction_version        | bigint |             |
+| maximum                         | bigint |             |
+| supply                          | bigint |             |
+| token_data_id                   | bigint |             |
+| token_name                      | String |             |
+| token_properties                | Table  |             |
+| token_standard                  | String |             |
+| token_uri                       | String |             |
 
 ### `current_collections_v2`
 metadata for each nft collection, includes token v1
 
 | Field                        | Type | Description |
-|------------------------------|------|-------------|
-| cdn_asset_uris               |      |             |
-| collection_id                |      |             |
-| collection_name              |      |             |
-| creator_address              |      |             |
-| current_supply               |      |             |
-| description                  |      |             |
-| last_transaction_timestamp   |      |             |
-| last_transaction_version     |      |             |
-| max_supply                   |      |             |
-| mutable_description          |      |             |
-| mutable_uri                  |      |             |
-| table_handle_v1              |      |             |
-| token_standard               |      |             |
-| total_minted_v2              |      |             |
-| uri                          |      |             |
+|------------------------------|--------|-------------|
+| cdn_asset_uris               | Table  |             |
+| collection_id                | bigint |             |
+| collection_name              | String |             |
+| creator_address              | String |             |
+| current_supply               | bigint |             |
+| description                  | String |             |
+| last_transaction_timestamp   | bigint |             |
+| last_transaction_version     | bigint |             |
+| max_supply                   | bigint |             |
+| mutable_description          | String |             |
+| mutable_uri                  | String |             |
+| table_handle_v1              | String |             |
+| token_standard               | String |             |
+| total_minted_v2              | bigint |             |
+| uri                          | String |             |
 
 ### `current_collection_ownership_v2_view`
 _Has an aggregate view for summary data called `current_collection_ownership_v2_view_aggregate`_
 
 a view that groups owners and collection, and provides the count of distinct nfts owned
 
-| Field                        | Type | Description |
-|------------------------------|------|-------------|
-| collection_id                |      |             |
-| collection_name              |      |             |
-| collection_uri               |      |             |
-| creator_address              |      |             |
-| current_collection           |      |             |
-| distinct_tokens              |      |             |
-| last_transaction_version     |      |             |
-| owner_address                |      |             |
-| single_token_uri             |      |             |
+| Field                        | Type   | Description |
+|------------------------------|--------|-------------|
+| collection_id                | bigint |             |
+| collection_name              | String |             |
+| collection_uri               | String |             |
+| creator_address              | String |             |
+| current_collection           | Table  |             |
+| distinct_tokens              | bigint |             |
+| last_transaction_version     | bigint |             |
+| owner_address                | String |             |
+| single_token_uri             | String |             |
 
 ## Fungible Assets
 
 ### `fungible_asset_metadata`
 documentation for each fungible asset, e.g. decimals, supply, etc, includes coin v1
 
-| Field                                | Type | Description |
-|--------------------------------------|------|-------------|
-| asset_type                           |      |             |
-| creator_address                      |      |             |
-| decimals                             |      |             |
-| icon_uri                             |      |             |
-| last_transaction_timestamp           |      |             |
-| last_transaction_version             |      |             |
-| name                                 |      |             |
-| project_uri                          |      |             |
-| supply_aggregator_table_handle_v1    |      |             |
-| supply_aggregator_table_key_v1       |      |             |
-| symbol                               |      |             |
-| token_standard                       |      |             |
+| Field                                | Type   | Description |
+|--------------------------------------|--------|-------------|
+| asset_type                           | String |             |
+| creator_address                      | String |             |
+| decimals                             | bigint |             |
+| icon_uri                             | String |             |
+| last_transaction_timestamp           | bigint |             |
+| last_transaction_version             | bigint |             |
+| name                                 | String |             |
+| project_uri                          | String |             |
+| supply_aggregator_table_handle_v1    | String |             |
+| supply_aggregator_table_key_v1       | String |             |
+| symbol                               | String |             |
+| token_standard                       | String |             |
 
 ### `fungible_asset_activities`
 fungible asset activities, includes coin v1
 
-| Field                           | Type | Description |
-|---------------------------------|------|-------------|
-| amount                          |      |             |
-| asset_type                      |      |             |
-| block_height                    |      |             |
-| entry_function_id_str           |      |             |
-| event_index                     |      |             |
-| gas_fee_payer_address           |      |             |
-| is_frozen                       |      |             |
-| is_gas_fee                      |      |             |
-| is_transaction_success          |      |             |
-| metadata                        |      |             |
-| owner_address                   |      |             |
-| owner_aptos_names               |      |             |
-| owner_aptos_names_aggregate     |      |             |
-| storage_id                      |      |             |
-| storage_refund_amount           |      |             |
-| token_standard                  |      |             |
-| transaction_timestamp           |      |             |
-| transaction_version             |      |             |
-| type                            |      |             |
+| Field                           | Type   | Description |
+|---------------------------------|--------|-------------|
+| amount                          | bigint |             |
+| asset_type                      | String |             |
+| block_height                    | bigint |             |
+| entry_function_id_str           | String |             |
+| event_index                     | bigint |             |
+| gas_fee_payer_address           | String |             |
+| is_frozen                       | Boolean|             |
+| is_gas_fee                      | Boolean|             |
+| is_transaction_success          | Boolean|             |
+| metadata                        | Table  |             |
+| owner_address                   | String |             |
+| owner_aptos_names               | Table  |             |
+| owner_aptos_names_aggregate     | Table  |             |
+| storage_id                      | String |             |
+| storage_refund_amount           | bigint |             |
+| token_standard                  | String |             |
+| transaction_timestamp           | bigint |             |
+| transaction_version             | bigint |             |
+| type                            | String |             |
 
 ### `current_fungible_asset_balances`
 _Has an aggregate view for summary data called `current_fungible_asset_balances_aggregate`_
 
 fungible asset balances per owner, includes coin v1
 
-| Field                       | Type | Description |
-|-----------------------------|------|-------------|
-| amount                      |      |             |
-| asset_type                  |      |             |
-| is_frozen                   |      |             |
-| is_primary                  |      |             |
-| last_transaction_timestamp  |      |             |
-| last_transaction_version    |      |             |
-| metadata                    |      |             |
-| owner_address               |      |             |
-| storage_id                  |      |             |
-| token_standard              |      |             |
+| Field                       | Type   | Description |
+|-----------------------------|--------|-------------|
+| amount                      | bigint |             |
+| asset_type                  | String |             |
+| is_frozen                   | Boolean|             |
+| is_primary                  | Boolean|             |
+| last_transaction_timestamp  | bigint |             |
+| last_transaction_version    | bigint |             |
+| metadata                    | Table  |             |
+| owner_address               | String |             |
+| storage_id                  | String |             |
+| token_standard              | String |             |
 
 ## Aptos Naming Service (ANS)
 
@@ -284,34 +285,34 @@ _Has an aggregate view for summary data called `current_aptos_names_aggregate`_
 
 view created based on current_ans_lookup_v2 for easy query
 
-| Field                       | Type | Description |
-|-----------------------------|------|-------------|
-| domain                      |      |             |
-| domain_with_suffix          |      |             |
-| expiration_timestamp        |      |             |
-| is_active                   |      |             |
-| is_domain_owner             |      |             |
-| is_primary                  |      |             |
-| last_transaction_version    |      |             |
-| owner_address               |      |             |
-| registered_address          |      |             |
-| subdomain                   |      |             |
-| token_name                  |      |             |
-| token_standard              |      |             |
+| Field                       | Type   | Description |
+|-----------------------------|--------|-------------|
+| domain                      | String |             |
+| domain_with_suffix          | String |             |
+| expiration_timestamp        | bigint |             |
+| is_active                   | Boolean|             |
+| is_domain_owner             | Boolean|             |
+| is_primary                  | Boolean|             |
+| last_transaction_version    | bigint |             |
+| owner_address               | String |             |
+| registered_address          | String |             |
+| subdomain                   | String |             |
+| token_name                  | String |             |
+| token_standard              | String |             |
 
 ### `current_ans_lookup_v2`
 raw table for current_aptos_names
 
-| Field                     | Type | Description |
-|---------------------------|------|-------------|
-| domain                    |      |             |
-| expiration_timestamp      |      |             |
-| is_deleted                |      |             |
-| last_transaction_version  |      |             |
-| registered_address        |      |             |
-| subdomain                 |      |             |
-| token_name                |      |             |
-| token_standard            |      |             |
+| Field                     | Type   | Description |
+|---------------------------|--------|-------------|
+| domain                    | String |             |
+| expiration_timestamp      | bigint |             |
+| is_deleted                | Boolean|             |
+| last_transaction_version  | bigint |             |
+| registered_address        | String |             |
+| subdomain                 | String |             |
+| token_name                | String |             |
+| token_standard            | String |             |
 
 # Deprecated Tables
 
