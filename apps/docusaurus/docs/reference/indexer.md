@@ -48,12 +48,12 @@ This table maps accounts and transactions that interact with that account.
 | Field                        | Type    | Description |
 |------------------------------|---------|-------------|
 | account_address              | String! | This is an Aptos account address. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
-| coin_activities              | Table   |             |
-| coin_activities_aggregate    | Table   |             |
-| delegated_staking_activities | Table   |             |
+| coin_activities              | Table   | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| coin_activities_aggregate    | Table   | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| delegated_staking_activities | Table   | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | fungible_asset_activities    | Table   | References [fungible_asset_activities](#fungible_asset_activities). |
-| token_activities             | Table   |             |
-| token_activities_aggregate   | Table   |             |
+| token_activities             | Table   | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| token_activities_aggregate   | Table   | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | token_activities_v2          | Table   | References [token_activities_v2](#token_activities_v2). |
 | token_activities_v2_aggregate| Table   | References [token_activities_v2](#token_activities_v2). |
 | transaction_version          | bigint! | Blockchain version of the transaction. Ex. 10000000 |
@@ -90,12 +90,12 @@ This table tracks token activities and is especially useful for tracking NFT act
 | Field                     | Type    | Description |
 |-------------------------|-----------|-------------|
 | after_value             | String    | The value of a token property after the transaction. Ex. "100" |
-| aptos_names_from        | Table     | References the Aptos Name Service (ANS) for the sender's address. |
-| aptos_names_from_aggregate | Table  | Aggregates data from `aptos_names_from`. |
-| aptos_names_to          | Table     | References the Aptos Name Service (ANS) for the receiver's address. |
-| aptos_names_to_aggregate| Table     | Aggregates data from `aptos_names_to`. |
+| aptos_names_from        | Table     | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| aptos_names_from_aggregate | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| aptos_names_to          | Table     | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| aptos_names_to_aggregate| Table     | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | before_value            | String    | The value of a token property before the transaction. Ex. "50" |
-| current_token_data      | Table     | References [current_token_datas_v2](#current_token_datas_v2). Details about the token involved. |
+| current_token_data      | Table     | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | entry_function_id_str   | String    | The identifier of the function called in this transaction. Ex. "transfer" |
 | event_account_address   | String    | This is an Aptos account address related to the event. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
 | event_index             | bigint    | Index of the event within the transaction. Ex. 1 |
@@ -138,8 +138,8 @@ This table tracks who owns which NFTs. This includes both v1 and v2 tokens. Fung
 | collection_data_id_hash      | String | This is a hash identifying the data of the collection. Ex. "0xbd0818e81f08ccb0297a2ae80726e5f1a36ef077ad910d5c1efac79a824899f3" |
 | collection_name              | String | The name of the collection to which the token belongs. Ex. "CryptoKitties" |
 | creator_address              | String | This is an Aptos account address that created the token. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
-| current_collection_data      | Table  |             |
-| current_token_data           | Table  |             |
+| current_collection_data      | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| current_token_data           | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | last_transaction_timestamp   | String | Timestamp of the last transaction involving the token. Ex. "2024-04-17T02:14:25.68771" |
 | last_transaction_version     | bigint | The version number of the last transaction involving the token. Ex. 9000000001 |
 | name                         | String | This is a name tied to this token, not necessarily unique. Ex. "GoldenDragon" |
@@ -156,11 +156,11 @@ This table tracks the metadata associated with each NFT (Ex. URI, supply, etc.).
 | Field                           | Type   | Description |
 |---------------------------------|--------|-------------|
 | aptos_name                      | String | This is a name tied to this token using the Aptos Name Service (ANS). Ex. "EpicDragon" |
-| cdn_asset_uris                  | Table  | URI references to assets on a CDN. |
+| cdn_asset_uris                  | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | collection_id                   | String | Identifier for the collection that includes this token. Ex. "0x360f6eeabb4d7a9d2fab1f35b01e02831e3b5c4b73c7fd6c98dcc1c301c817c8" |
-| current_collection              | Table  | Reference to data about the collection containing this token. |
-| current_token_ownerships        | Table  | Reference to ownership data for this token. |
-| current_token_ownerships_aggregate | Table  | Aggregated ownership data for this token. |
+| current_collection              | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| current_token_ownerships        | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
+| current_token_ownerships_aggregate | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | decimals                        | bigint | Number of decimal places for token value, typically for fungible tokens. Ex. 18 |
 | description                     | String | Description of the token. Ex. "A legendary dragon from the mystical lands." |
 | is_fungible_v2                  | Boolean| Whether the token is fungible. Ex. False for NFTs |
@@ -171,7 +171,7 @@ This table tracks the metadata associated with each NFT (Ex. URI, supply, etc.).
 | supply                          | bigint | Current supply of the token in circulation. Ex. 500000 |
 | token_data_id                   | String | Unique identifier for the token's data. Ex. "0xa815a9a09105973084bfc31530e7c8f002846787c2f0521e1e34dc144ad83b89" |
 | token_name                      | String | The formal name of the token. Ex. "Mystic Dragon" |
-| token_properties                | Table  | Properties specific to the token. |
+| token_properties                | Object | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | token_standard                  | String | Aptos standard that the collection adheres to. Ex. "v1"  |
 | token_uri                       | String | URI linking to further information about the token. Ex. "https://example.com/tokens/987654321" |
 
@@ -181,7 +181,7 @@ This table tracks the metadata associated with each NFT collection (Ex. collecti
 
 | Field                        | Type   | Description |
 |------------------------------|--------|-------------|
-| cdn_asset_uris               | Table  |             |
+| cdn_asset_uris               | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | collection_id                | String | Unique identifier for the collection. Ex. "0xa815a9a09105973084bfc31530e7c8f002846787c2f0521e1e34dc144ad83b88" |
 | collection_name              | String | The formal name of the collection. Ex. "Mythic Dragons" |
 | creator_address              | String | This is an Aptos account address that created the collection. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
@@ -209,7 +209,7 @@ This table maps collections to who owns them and helps count how much of a colle
 | collection_name              | String | The formal name of the collection. Ex. "Mythic Dragons" |
 | collection_uri               | String | URI linking to further information about the collection. Ex. "https://example.com/collections/9876543210" |
 | creator_address              | String | This is an Aptos account address that created the collection. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
-| current_collection           | Table  |             |
+| current_collection           | Table  | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | distinct_tokens              | bigint | The count of distinct tokens owned within this collection. Ex. 150 |
 | last_transaction_version     | bigint | The version number of the last transaction involving this collection. Ex. 3000000002 |
 | owner_address                | String | This is an Aptos account address that currently owns the token. Ex. "0x123abc456def7890abcdef1234567890abcdef1234" |
@@ -254,7 +254,7 @@ This tracks the activity of fungible assets. It includes v1 token data.
 | is_frozen                       | Boolean| Indicates whether the asset is frozen. Ex. False |
 | is_gas_fee                      | Boolean| Indicates whether this activity involved a gas fee. Ex. True |
 | is_transaction_success          | Boolean| Indicates whether the transaction was successful. Ex. True |
-| metadata                        | Table  |             |
+| metadata                        | Object  | Use the [Hasura explorer](#indexer-api-reference) to see fields for `metadata` in this table. |
 | owner_address                   | String | This is an Aptos account address that owns the asset. Ex. "0x123abc456def7890abcdef1234567890abcdef1234" |
 | owner_aptos_names               | Table  | References [owner_aptos_names](#current_aptos_names). |
 | owner_aptos_names_aggregate     | Table  | References [owner_aptos_names](#current_aptos_names). |
@@ -278,7 +278,7 @@ This tracks the asset balances of each account on-chain. It includes v1 token da
 | is_primary                  | Boolean| Indicates whether this is the primary balance of the owner. Ex. True |
 | last_transaction_timestamp  | String | Timestamp of the last transaction involving this balance. Ex. "2024-04-17T02:14:25.68771" |
 | last_transaction_version    | bigint | Blockchain version of the last transaction involving this balance. Ex. 30000000 |
-| metadata                    | Table  | References metadata associated with this asset balance. |
+| metadata                    | Object  | Use the [Hasura explorer](#indexer-api-reference) to see fields for `metadata` in `current_fungible_asset_balances`. |
 | owner_address               | String | This is an Aptos account address that owns the asset. Ex. "0xa815a9a09105973084bfc31530e7c8f002846787c2f0521e1e34dc144ad83b89" |
 | storage_id                  | String | Identifier for the storage associated with this balance. Ex. "0xa815a9a09105973084bfc31530e7c8f002846787c2f0521e1e34dc144ad83b89" |
 | token_standard              | String | Aptos standard that the collection adheres to. Ex. "v1"  |
