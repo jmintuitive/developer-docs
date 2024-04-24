@@ -101,7 +101,7 @@ This table tracks token activities and is especially useful for tracking NFT act
 | event_index             | bigint    | Index of the event within the transaction. Ex. 1 |
 | from_address            | String    | This is an Aptos account address from which the token was sent. Addresses must be 66 characters so may be 0 padded. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
 | is_fungible_v2          | Boolean   | Indicates whether the token is fungible. Ex. False for NFTs. |
-| property_version_v1     | bigint    | The version of the token's properties under schema version 1. Ex. 1 |
+| property_version_v1     | bigint    | The version of the token's properties under schema version 1. This field is only for token standard v1. It's always 0 for v2. Ex. 0 |
 | to_address              | String    | This is an Aptos account address to which the token was sent. Addresses must be 66 characters so may be 0 padded. Ex. "0x123abc456def7890abcdef1234567890abcdef1234" |
 | token_amount            | bigint    | The amount of the token transferred in this activity. Ex. 3 |
 | token_data_id           | bigint    | Unique identifier for this particular token's data. Ex. 123456789 |
