@@ -64,7 +64,7 @@ This table shares what chain is currently being queried.
 
 | Field         | Type   | Description |
 |---------------|--------|-------------|
-| chain_id      | String | The unique identifier for the chain you are accessing. Ex. "TESTNET" |
+| chain_id      | int | The unique identifier for the chain you are accessing. Ex. 1 (Mainnet) or 2 (Testnet) |
 
 ### `processor_status`
 
