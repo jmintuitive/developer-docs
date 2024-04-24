@@ -96,7 +96,7 @@ This table tracks token activities and is especially useful for tracking NFT act
 | aptos_names_to_aggregate| Table     | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
 | before_value            | String    | The value of a token property before the transaction. Ex. "50" |
 | current_token_data      | Table     | Use the [Hasura explorer](#indexer-api-reference) to see these sub-fields. |
-| entry_function_id_str   | String    | The identifier of the function called in this transaction. Ex. "transfer" |
+| entry_function_id_str   | String    | The identifier of the function called in this transaction. Ex. "0x1::aptos_account::transfer" |
 | event_account_address   | String    | This is an Aptos account address related to the event. Addresses must be 66 characters so may be 0 padded. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
 | event_index             | bigint    | Index of the event within the transaction. Ex. 1 |
 | from_address            | String    | This is an Aptos account address from which the token was sent. Addresses must be 66 characters so may be 0 padded. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
@@ -248,7 +248,7 @@ This tracks the activity of fungible assets. It includes v1 token data.
 | amount                          | bigint | The amount of the asset involved in the activity. Ex. 1000 |
 | asset_type                      | String | The type of the asset, described by a Move resource. Ex. "0x1::aptos_coin::AptosCoin" |
 | block_height                    | bigint | The blockchain height at which this activity occurred. Ex. 1500000 |
-| entry_function_id_str           | String | The identifier of the function called in this transaction. Ex. "transfer" |
+| entry_function_id_str           | String | The identifier of the function called in this transaction. Ex. "0x1::aptos_account::transfer" |
 | event_index                     | bigint | Index of the event within the transaction. Ex. 1 |
 | gas_fee_payer_address           | String | This is an Aptos account address that paid the gas fee for the transaction. Addresses must be 66 characters so may be 0 padded. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
 | is_frozen                       | Boolean| Indicates whether the asset is frozen. Ex. False |
