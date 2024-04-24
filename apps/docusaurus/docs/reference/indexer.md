@@ -104,7 +104,7 @@ This table tracks token activities and is especially useful for tracking NFT act
 | property_version_v1     | bigint    | The version of the token's properties under schema version 1. This field is only for token standard v1. It's always 0 for v2. Ex. 0 |
 | to_address              | String    | This is an Aptos account address to which the token was sent. Addresses must be 66 characters so may be 0 padded. Ex. "0x123abc456def7890abcdef1234567890abcdef1234" |
 | token_amount            | bigint    | The amount of the token transferred in this activity. Ex. 3 |
-| token_data_id           | bigint    | Unique identifier for this particular token's data. Ex. 123456789 |
+| token_data_id           | String    | Unique identifier for this particular token's data. For token standard v1, this is derived from a combination of creator_address, collection_name, and token_name. Ex. "0x50bc83f01d48ab3b9c00048542332201ab9cbbea61bda5f48bf81dc506caa78a" |
 | token_standard          | String    | Aptos standard that the collection adheres to. Ex. "v1"  |
 | transaction_timestamp   | String    | Timestamp when the transaction occurred. Ex. "2024-04-17T02:14:25.68771" |
 | transaction_version     | bigint    | Blockchain version of the transaction. Ex. 10000000 |
