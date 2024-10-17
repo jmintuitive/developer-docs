@@ -73,8 +73,8 @@ class Program
         var recipient = Account.Generate();
         var sponsor = Account.Generate();
 
-        await client.Faucet.FundAccount(user.Address, 100_000_000);
-        await client.Faucet.FundAccount(sponsor.Address, 100_000_000);
+        await client.Faucet.FundAccount(user.Address, 100_000_000); // 1 APT = 10^8 Octas
+        await client.Faucet.FundAccount(sponsor.Address, 100_000_000); // 1 APT = 10^8 Octas
     }
 }
 ```

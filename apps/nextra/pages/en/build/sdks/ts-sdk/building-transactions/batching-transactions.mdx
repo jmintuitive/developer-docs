@@ -38,7 +38,7 @@ async function example() {
     console.log("\n=== Funding sender ===\n");
     await aptos.fundAccount({
         accountAddress: sender.accountAddress,
-        amount: 100_000_000,
+        amount: 100_000_000, // 1 APT = 10^8 Octas
     });  
     console.log("Funded the sender account!")
 

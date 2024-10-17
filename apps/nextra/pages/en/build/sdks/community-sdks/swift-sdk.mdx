@@ -54,7 +54,7 @@ let newAccount = try Account.fromDerivationPath(Wallet.path, mnemonic: Wallet.mn
 You can create and fund an account with a faucet on any network that is not mainnet
 ```swift
 let account = Account.generate()
-let txn = try await client.faucet.fundAccount(accountAddress: account.accountAddress, amount: 100_000_000)
+let txn = try await client.faucet.fundAccount(accountAddress: account.accountAddress, amount: 100_000_000) // 1 APT = 10^8 Octas
 ```
 
 ### Sending a transaction
@@ -63,7 +63,7 @@ You can send a AptosCoin via a transaction
 ```swift
 let txn: TransactionResponse
 let senderAccount = Account.generate()
-_ = try await aptos.faucet.fundAccount(accountAddress: senderAccount.accountAddress, amount: 100_000_000)
+_ = try await aptos.faucet.fundAccount(accountAddress: senderAccount.accountAddress, amount: 100_000_000) // 1 APT = 10^8 Octas
 let bob = Account.generate()
 // Build transaction
 let rawTxn = try await aptos.transaction.build.simple(

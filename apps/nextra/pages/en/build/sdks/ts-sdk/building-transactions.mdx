@@ -133,7 +133,7 @@ async function example() {
     console.log("\n=== Funding accounts ===\n");
     await aptos.fundAccount({
         accountAddress: alice.accountAddress,
-        amount: 100_000_000,
+        amount: 100_000_000, // 1 APT = 10^8 Octas
     });  
     await aptos.fundAccount({
         accountAddress: bob.accountAddress,

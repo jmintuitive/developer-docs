@@ -27,7 +27,7 @@ async function example() {
 
     await aptos.fundAccount({
         accountAddress: sender.accountAddress,
-        amount: 100_000_000,
+        amount: 100_000_000, // 1 APT = 10^8 Octas
     }); 
 
     // 1. Build the transaction to preview the impact of it

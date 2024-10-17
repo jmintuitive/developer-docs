@@ -96,9 +96,9 @@ The following is a complete example of how to build and send a transaction to tr
 
 ```kotlin filename="transaction.kt"
 
-const val FUNDING_AMOUNT = 100_000_000L
+const val FUNDING_AMOUNT = 100_000_000L // 1 APT = 10^8 Octas
 const val SEND_AMOUNT_APT = 0.5f
-const val UNIT_CONVERSION = 100_000_000
+const val UNIT_CONVERSION = 100_000_000 // 1 APT = 10^8 Octas
 const val SEND_AMOUNT_UNITS = (SEND_AMOUNT_APT * UNIT_CONVERSION)
 const val SEND_AMOUNT = 1_000_000UL
 

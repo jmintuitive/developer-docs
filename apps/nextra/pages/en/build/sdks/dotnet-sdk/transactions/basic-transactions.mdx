@@ -52,7 +52,7 @@ class Program
 
         // 1. Create an account and fund it.
         var account = Account.Generate();
-        await client.Faucet.FundAccount(account.Address, 100_000_000);
+        await client.Faucet.FundAccount(account.Address, 100_000_000); // 1 APT = 10^8 Octas
     }
 }
 ```
