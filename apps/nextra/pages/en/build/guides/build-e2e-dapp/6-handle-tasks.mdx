@@ -20,7 +20,7 @@ type Task = {
 
 function App() {
 	const [tasks, setTasks] = useState<Task[]>([]);
-	...
+	//...
 }
 ```
 
@@ -180,7 +180,7 @@ Import `Input` from `antd` - `import { Input } from "antd";`
 
 ```tsx filename="App.tsx"
 {!accountHasList ? (
-  ...
+ // ...
 ) : (
   <Row gutter={[0, 32]} style={{ marginTop: "2rem" }}>
 		// Add this!
@@ -199,7 +199,7 @@ Import `Input` from `antd` - `import { Input } from "antd";`
         </Button>
       </Input.Group>
     </Col>
-    ...
+   // ...
   </Row>
 )}
 ```
@@ -210,9 +210,9 @@ We have added a text input to write the task and a button to add the task.
 
 ```tsx filename="App.tsx"
 function App() {
-  ...
+ // ...
   const [newTask, setNewTask] = useState<string>("");
-  ...
+ // ...
 }
 ```
 
@@ -220,14 +220,14 @@ function App() {
 
 ```tsx filename="App.tsx"
 function App() {
-  ...
+  //...
   const [newTask, setNewTask] = useState<string>("");
 
   const onWriteTask = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setNewTask(value);
   };
-  ...
+  //...
 }
 ```
 
@@ -407,7 +407,7 @@ We make sure there is an account connected, set the transaction in progress stat
 Import `Checkbox` from `antd` - `import { Checkbox } from "antd";`
 
 ```tsx filename="App.tsx"
-...
+//...
 <List.Item
   actions={[
     <div>
@@ -423,7 +423,7 @@ Import `Checkbox` from `antd` - `import { Checkbox } from "antd";`
     </div>,
   ]}
 >
-...
+//...
 ```
 
 Try it! Check a task’s checkbox, approve the transaction and see the task marked as completed.

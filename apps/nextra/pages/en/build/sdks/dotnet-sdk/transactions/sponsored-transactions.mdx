@@ -91,7 +91,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ...
+        //...
 
         // 2. Build the transaction
         var transaction = await client.Transaction.Build(
@@ -121,7 +121,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ...
+        //...
 
         // 3. Sign the transaction with the user
         var userSignature = client.Transaction.SignTransaction(transaction);
@@ -144,7 +144,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ...
+        //...
 
         // 5. Submit the transaction
         var submitTransactionData = new SubmitTransactionData(transaction, userSignature, feePayerSignature);
@@ -165,7 +165,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ...
+        //...
 
         // 6. Wait for the transaction to be processed
         var transactionResult = await client.Transaction.WaitForTransaction(submittedTransaction.Hash);
@@ -184,7 +184,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ...
+        //...
 
         // 7. Print balances
         var userBalance = await client.Account.GetCoinBalance(user.Address);

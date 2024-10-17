@@ -188,7 +188,7 @@ aptos node show-validator-set --profile mainnet-operator | jq -r '.Result.active
 
    ```terraform filename="config.tf"
    module "aptos-node" {
-     ...
+     //...
      enable_monitoring           = true
      utility_instance_num        = 3  # 这将添加一个额外的实用程序实例来运行监控组件
    }

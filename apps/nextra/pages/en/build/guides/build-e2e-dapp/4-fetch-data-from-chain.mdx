@@ -59,7 +59,7 @@ import { useWallet } from "@aptos-labs/wallet-adapter-react";
 ```tsx filename="App.tsx"
 function App (
 	const { account } = useWallet();
-	...
+	//...
 )
 ```
 
@@ -71,11 +71,11 @@ The `account` object is `null` if there is no account connected; when an account
 
 ```tsx filename="App.tsx"
 function App() {
-  ...
+ // ...
   useEffect(() => {
     fetchList();
   }, [account?.address]);
-  ...
+  //...
 }
 ```
 
@@ -83,9 +83,9 @@ function App() {
 
 ```tsx filename="App.tsx"
 function App (
-  ...
+  //...
   const [accountHasList, setAccountHasList] = useState<boolean>(false);
-  ...
+  //...
 )
 ```
 

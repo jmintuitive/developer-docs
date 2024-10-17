@@ -218,7 +218,7 @@ If you used Terraform to deploy your nodes (e.g., for AWS, Azure or GCP), follow
 
    ```terraform filename="config.tf"
    module "aptos-node" {
-     ...
+     //...
      enable_monitoring           = true
      utility_instance_num        = 3  # this will add one more utility instance to run monitoring component
    }

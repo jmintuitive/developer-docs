@@ -56,11 +56,11 @@ script {
 module 66::some_module {   // Not in expression context, so no @ needed
     use 0x1::other_module; // Not in expression context so no @ needed
     use std::vector;       // Can use a named address as a namespace item when using other modules
-    ...
+    // ...
 }
 
 module std::other_module {  // Can use a named address as a namespace item to declare a module
-    ...
+    // ...
 }
 ```
 

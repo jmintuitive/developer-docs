@@ -114,7 +114,7 @@ And also create a `Task` struct that holds:
 On the `todolist.move` file, update the content in the module with:
 
 ```move filename="todolist.move"
-...
+///...
 struct TodoList has key {
     tasks: Table<u64, Task>,
     set_task_event: event::EventHandle<Task>,
@@ -127,7 +127,7 @@ struct Task has store, drop, copy {
     content: String,
     completed: bool,
   }
-...
+///...
 ```
 
 **What did we just add?**
@@ -165,11 +165,11 @@ We have some errors on `Unbound type`- this is happening because we used some ty
 3. On the top of the module, import those types by adding:
 
 ```move filename="todolist.move"
-...
+///...
 use aptos_framework::event;
 use std::string::String;
 use aptos_std::table::Table;
-...
+///...
 ```
 
 That will tell the compiler where it can get those types from.
@@ -334,7 +334,7 @@ public entry fun create_task(account: &signer, content: String) acquires TodoLis
   // assert signer has created a list
   assert!(exists<TodoList>(signer_address), 1);
 
-  ...
+  //...
 }
 ```
 
@@ -387,7 +387,7 @@ public entry fun create_task(account: &signer, content: String) acquires TodoLis
   // assert signer has created a list
   assert!(exists<TodoList>(signer_address), E_NOT_INITIALIZED);
 
-  ...
+  // ...
 }
 
 
@@ -570,7 +570,7 @@ Add the following `use` statement where we have all of our import statements.
 
 ```move filename="todolist.move"
 use std::string::String; // change to this
-...
+// ...
 #[test_only]
 use std::string; // add this
 ```

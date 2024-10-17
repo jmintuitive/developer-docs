@@ -60,7 +60,7 @@ their account:
 
 ```rust
 pub enum TransactionAuthenticator {
-...
+    ///...
     /// Optional Multi-agent transaction with a fee payer.
     FeePayer {
         sender: AccountAuthenticator,
@@ -69,7 +69,7 @@ pub enum TransactionAuthenticator {
         fee_payer_address: AccountAddress,
         fee_payer_signer: AccountAuthenticator,
     },
-...
+    ///...
 }
 ```
 
@@ -87,7 +87,7 @@ During signing of the transaction, all parties sign the following:
 
 ```rust
 pub enum RawTransactionWithData {
-...
+    ///...
     MultiAgentWithFeePayer {
         raw_txn: RawTransaction,
         secondary_signer_addresses: Vec<AccountAddress>,
